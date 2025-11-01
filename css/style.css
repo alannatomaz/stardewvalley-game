@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    /* espaçamento externo */
+    padding: 0;
+    /* espaçamento interno */
+    box-sizing: border-box;
+    /* os espaçamentos serão descontados do tamanho do elemento*/
+}
+
+body {
+    display: flex;
+    /* Criador de Layout */
+    align-items: center;
+    /* Alinhamento dos itens na horizontal */
+    justify-content: center;
+    /* Alinhamento dos itens na vertical */
+    flex-direction: column;
+    /*
+Existem opçoes e variações de valores e INODADES DE MEDIDA possiveis de se colocar aqui;
+    - vw: Viewport Width (largura total que o monitor disponibiliza)
+    - vh: Viewport Height (altura total que o monitor disponibiliza) 
+    - % : Porcentagem do elemento pai
+    - px: Pixels (medida fixa)
+    - em: medida relativa ao tamanho da fonte
+    - rem: medida relativa ao tamanho da fonte do elemento raiz (html)
+*/
+    min-height: 100vh;
+    /* altura minima de 100% da tela */
+    font-family: sans-serif;
+    /* fonte padrao do site */
+
+    background-color: black;
+    /* cor de fundo */
+
+    position: relative;
+}
+
+.music-control {
+    width: 50px;
+    top: 48px;
+    right: 48px;
+
+    cursor: pointer;
+    position: absolute;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 32px;
+    font-size: 80px;
+}
+
+.game {
+    background-image: url("../assets/background/nossa-fazendinha.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 1280px;
+    /*980*/
+    height: 720px;
+    /*920*/
+
+    position: relative;
+}
+
+.character {
+    position: absolute;
+    width: 60px;
+
+}
+
+#ash {
+    right: 2px;
+    z-index: 1;
+}
+
+#Crab {
+    display: none;
+    right: 90px;
+    top: 550px;
+
+}
+
+#Skeleton {
+    display: none;
+    right: 600px;
+    top: 330px;
+}
+
+#Serpent {
+    display: none;
+    width: 65px;
+    right: 175px;
+    top: 55px;
+}
+
+
+.music-control:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+
+}
+
+
+/*permite pegar elementos internos do body e posicionar em lugares especificos da tela */
+
+/* É possivel selecionar tags de diversas maneiras:
+    - Pelo nome da tag (ex: h1, img, audio, span, div, p...)
+    - Pela classe (ex: .container, .minha-classe, .button) 
+    - Pelo ID do elemento (ex: #meu-id, #hreset, #footer)
+    - Por atributos (ex: [type="text"], [alt="imagem"], [src="imagem.png"] ) 
+    - Selecionar maus de um elemento ( h1,h2,h3 {font-size: 32px})
+
+*/
+
+#reset {
+    display: none;
+    width: 100px;
+    /* Largura da imagem*/
+    height: 100px;
+    /* Altura da imagem*/
+
+    /* box-model: margin, border,padding, content
+            - span, strong => nao funciona margin    */
+
+    cursor: pointer;
+    /* Cursor muda quando passa por cima de coisa clicável0*/
+    position: absolute;
+    /* Permite posicionar o elemento em qualquer lugar da tela */
+
+    z-index: 3;
+}
+
+#reset:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+
+}
