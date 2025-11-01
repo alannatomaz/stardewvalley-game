@@ -28,12 +28,13 @@ const musicControl = document.querySelector(".music-control");
 musicControl.addEventListener("click", (event) => {
     event.stopPropagation()
 
-    event.target.src = `!${event.target.src}`.includes("on.png")
-        ? "../assets/icons/off.png"
-        : "../assets/icons/on.png";
+    const isOn = event.target.src.includes("on.png");
+    
+    event.target.src = isOn
+        ? "./assets/icons/off.png"
+        : "./assets/icons/on.png";
 
-    `${event.target.src}`.includes("on.png")
-        ? audio.play() : audio.pause();
+    isOn ? audio.pause() : audio.play();
 });
 
 function getRightPosition() { //pega a posição da direita para o personagem nao ultrapassar os limites da imagem de fundo
@@ -85,14 +86,14 @@ body.addEventListener("keydown", (event) => {
         case "ArrowLeft":
             if (getRightPosition() < 1220) {
                 ash.style.right = `${getRightPosition() + 8}px`;
-                ash.src = "../assets/linnus-left.png";
+                ash.src = "./assets/linnus-left.png";
             }
             break;
 
         case 'ArrowRight':
             if (getRightPosition() > 2) {
                 ash.style.right = `${getRightPosition() - 8}px`;
-                ash.src = "../assets/linnus-right.png"
+                ash.src = "./assets/linnus-right.png"
             }
 
             break;
@@ -100,7 +101,7 @@ body.addEventListener("keydown", (event) => {
         case 'ArrowDown':
             if (getTopPosition() < 625) {
                 ash.style.top = `${getTopPosition() + 8}px`;
-                ash.src = "../assets/linnus-front.png"
+                ash.src = "./assets/linnus-front.png"
             }
 
             break;
@@ -108,7 +109,7 @@ body.addEventListener("keydown", (event) => {
         case 'ArrowUp':
             if (getTopPosition() > 2) {
                 ash.style.top = `${getTopPosition() - 8}px`;
-                ash.src = "../assets/linnus-back.png"
+                ash.src = "./assets/linnus-back.png"
             }
 
             break;
